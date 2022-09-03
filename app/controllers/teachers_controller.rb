@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
   def update
     @teacher = Teacher.find(params[:id])
     if @teacher.update(teacher_params)
-      redirect_to @teacher
+      redirect_to @teacher, notice: 'Teacher successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
     if @teacher.save
-      redirect_to @teacher
+      redirect_to @teacher, notice: 'Teacher successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class TeachersController < ApplicationController
   def destroy
     @teacher = Teacher.find(params[:id])
     @teacher.destroy
-    redirect_to teachers_url, status: :see_other
+    redirect_to teachers_url, status: :see_other, alert: 'Teacher successfully deleted.'
   end
 
   private
