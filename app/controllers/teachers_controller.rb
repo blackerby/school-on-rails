@@ -13,8 +13,11 @@ class TeachersController < ApplicationController
 
   def update
     @teacher = Teacher.find(params[:id])
-    @teacher.update(teacher_params)
-    redirect_to @teacher
+    if @teacher.update(teacher_params)
+      redirect_to @teacher
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -22,8 +25,12 @@ class TeachersController < ApplicationController
   end
 
   def create
-    teacher = Teacher.create(teacher_params)
-    redirect_to teacher
+    @teacher = Teacher.new(teacher_params)
+    if @teacher.save
+      redirect_to @teacher
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy

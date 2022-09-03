@@ -1,4 +1,5 @@
 <%= form_with(model: teacher) do |f| %>
+  <%= render 'shared/errors', object: teacher %>
   <div class="form-group">
     <div class="mb-3">
       <%= f.label :first_name, class: 'form-label' %>
@@ -13,8 +14,8 @@
       <%= f.email_field :email, class: 'form-control' %>
     </div>
     <div class="mb-3">
-      <%= f.label :department, class: 'form-label' %>
-      <%= f.select :department, ['Select a department'], {}, class: 'form-select' %>
+      <% # f.label :department, class: 'form-label' %>
+      <% # f.select :department, ['Select a department'], {}, class: 'form-select' %>
     </div>
     <div class="mb-3">
       <!-- rewrite to use collections_check_boxes helper -->
