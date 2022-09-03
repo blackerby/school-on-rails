@@ -3,7 +3,9 @@
   <div class="container text-center">
     <a href="#">Email</a>
     <%= link_to 'Edit', edit_teacher_path(@teacher) %>
-    <a href="#">Delete</a>
+    <%= link_to 'Delete', @teacher, 
+                data: { turbo_method: :delete, 
+                        turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
   </div>
   <h4 class="m-3 text-center">
     <a href="#">

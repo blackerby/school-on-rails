@@ -26,6 +26,12 @@ class TeachersController < ApplicationController
     redirect_to teacher
   end
 
+  def destroy
+    @teacher = Teacher.find(params[:id])
+    @teacher.destroy
+    redirect_to teachers_url, status: :see_other
+  end
+
   private
 
   def teacher_params
