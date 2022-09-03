@@ -1,0 +1,10 @@
+<h1>All Teachers</h1>
+<ul class="mt-4">
+  <% @teachers.each do |teacher| %>
+    <li>
+      <a href="mailto:<%= teacher.email %>">
+        <%= teacher.first_name%> <%= teacher.last_name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
