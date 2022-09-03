@@ -2,7 +2,7 @@
   <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
   <div class="container text-center">
     <a href="#">Email</a>
-    <a href="#">Edit</a>
+    <%= link_to 'Edit', edit_teacher_path(@teacher) %>
     <a href="#">Delete</a>
   </div>
   <h4 class="m-3 text-center">

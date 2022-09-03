@@ -2,9 +2,8 @@
 <ul class="mt-4">
   <% @teachers.each do |teacher| %>
     <li>
-      <a href="/teachers">
-        <%= teacher.first_name%> <%= teacher.last_name %>
-      </a>
-    </li>
-  <% end %>
+      <%= link_to "#{teacher.first_name} #{teacher.last_name}", teacher %>
+    </a>
+  </li>
+<% end %>
 </ul>
