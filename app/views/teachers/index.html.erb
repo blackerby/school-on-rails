@@ -2,7 +2,7 @@
 <ul class="mt-4">
   <% @teachers.each do |teacher| %>
     <li>
-      <a href="mailto:<%= teacher.email %>">
+      <a href="/teachers">
         <%= teacher.first_name%> <%= teacher.last_name %>
       </a>
     </li>
