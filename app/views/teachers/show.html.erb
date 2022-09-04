@@ -1,5 +1,5 @@
 <div class="col-lg-12 text-center">
-  <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
+  <h1><%= @teacher.name %></h1>
   <div class="container text-center">
     <%= mail_to @teacher.email %>
   </div>
@@ -17,27 +17,11 @@
   <div class="row">
     <div class="col">
       <h3>Teaches During</h3>
-      <table class="table table-striped">
-        <tr>
-          <td>
-            <a href="#">
-              Block
-            </a>
-          </td>
-        </tr>
-      </table>
+      <%= render 'shared/table', objects: @blocks%>
     </div>
     <div class="col">
       <h3>Free During</h3>
-      <table class="table table-striped">
-        <tr>
-          <td>
-            <a href="#">
-              Block
-            </a>
-          </td>
-        </tr>
-      </table>
+      <%= render 'shared/table', objects: @teacher.free %>
     </div>
   </div>
 </div>
