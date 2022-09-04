@@ -1,0 +1,9 @@
+<table class="table table-striped mt-3">
+  <% objects.each do |object| %>
+    <tr>
+      <td>
+        <%= link_to object.name, object %>
+      </td>
+    </tr>
+  <% end %>
+</table>
