@@ -21,3 +21,5 @@ teachers = Teacher.create([{ first_name: 'William', last_name: 'Blackerby',
                              department: Department.find(6) }])
 
 blocks = ('A'..'G').each { |letter| Block.create({ name: letter }) }
+
+classrooms = (1..17).each { |room| Classroom.create({ name: room.to_s }) }
