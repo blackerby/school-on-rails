@@ -5,9 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+departments = Department.create([{ name: 'English' }, { name: 'History' },
+                                 { name: 'Math' }, { name: 'Science' },
+                                 { name: 'Fine Arts' }, { name: 'Modern & Classical Languages' },
+                                 { name: 'Physical Education' }, { name: 'Computer Science' }])
 teachers = Teacher.create([{ first_name: 'William', last_name: 'Blackerby',
-                             email: 'william.blackerby@indiansprings.org' },
+                             email: 'william.blackerby@indiansprings.org',
+                             department: Department.find(6) },
                            { first_name: 'William', last_name: 'Belser',
-                             email: 'william.belser@indiansprings.org' },
+                             email: 'william.belser@indiansprings.org',
+                             department: Department.find(8) },
                            { first_name: 'Jonathan', last_name: 'Horn',
-                             email: 'jhorn@indiansprings.org' }])
+                             email: 'jhorn@indiansprings.org',
+                             department: Department.find(6) }])

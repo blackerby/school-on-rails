@@ -1,7 +1,9 @@
 <div class="col-lg-12 text-center">
   <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
   <div class="container text-center">
-    <a href="#">Email</a>
+    <%= mail_to @teacher.email %>
+  </div>
+  <div class="container text-center">
     <%= link_to 'Edit', edit_teacher_path(@teacher) %>
     <%= link_to 'Delete', @teacher, 
                 data: { turbo_method: :delete, 
