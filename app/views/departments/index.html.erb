@@ -1,0 +1,12 @@
+<h1>All Departments</h1>
+<ul class="mt-4">
+  <% @departments.each do |department| %>
+    <li>
+      <%= link_to department.name, department %>
+    </a>
+  </li>
+<% end %>
+</ul>
+<div class="container">
+  <%= link_to 'Add New Department', new_department_path %>
+</div>

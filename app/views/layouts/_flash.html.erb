@@ -1,8 +1,16 @@
-<% flash.each do |type, message| %>
-  <% if type == :notice %>
-    <% style = 'alert alert-success' %>
-  <% elsif type == 'alert' %>
-    <% style = 'alert alert-danger' %>
-  <% end %>
-  <%= tag.div message, class: style %>
+<% if flash[:notice] %>
+  <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+    <%= flash[:notice] %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+    <%= flash[:alert] %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
