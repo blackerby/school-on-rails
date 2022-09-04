@@ -9,6 +9,7 @@ departments = Department.create([{ name: 'English' }, { name: 'History' },
                                  { name: 'Math' }, { name: 'Science' },
                                  { name: 'Fine Arts' }, { name: 'Modern & Classical Languages' },
                                  { name: 'Physical Education' }, { name: 'Computer Science' }])
+
 teachers = Teacher.create([{ first_name: 'William', last_name: 'Blackerby',
                              email: 'william.blackerby@indiansprings.org',
                              department: Department.find(6) },
@@ -18,3 +19,5 @@ teachers = Teacher.create([{ first_name: 'William', last_name: 'Blackerby',
                            { first_name: 'Jonathan', last_name: 'Horn',
                              email: 'jhorn@indiansprings.org',
                              department: Department.find(6) }])
+
+blocks = ('A'..'G').each { |letter| Block.create({ name: letter }) }
