@@ -1,4 +1,5 @@
 <%= form_with(model: department) do |f| %>
+  <%= render 'shared/errors', object: department %>
   <div class="form-group">
     <div class="mb-3">
       <%= f.label :name, class: 'form-label' %>

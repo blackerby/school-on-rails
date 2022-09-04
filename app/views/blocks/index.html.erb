@@ -1,12 +1,5 @@
 <h1>All Blocks</h1>
-<ul class="mt-4">
-  <% @blocks.each do |block| %>
-    <li>
-      <%= link_to block.name, block %>
-    </a>
-  </li>
-<% end %>
-</ul>
+<%= render 'shared/list', objects: @blocks %>
 <div class="container">
   <%= link_to 'Add New Block', new_block_path %>
 </div>
