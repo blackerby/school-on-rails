@@ -1,6 +1,10 @@
 class BlocksController < ApplicationController
   def index
-    @blocks = Block.all
+    @blocks = if params[:query].present?
+                Block.filter_by_name(params[:query])
+              else
+                Block.all
+              end
   end
 
   def show

@@ -1,6 +1,10 @@
 class DepartmentsController < ApplicationController
   def index
-    @departments = Department.all
+    @departments = if params[:query].present?
+                     Department.filter_by_name(params[:query])
+                   else
+                     Department.all
+                   end
   end
 
   def show

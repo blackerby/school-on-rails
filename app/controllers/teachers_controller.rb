@@ -1,6 +1,10 @@
 class TeachersController < ApplicationController
   def index
-    @teachers = Teacher.all
+    @teachers = if params[:query].present?
+                  Teacher.filter_by_name(params[:query])
+                else
+                  Teacher.all
+                end
   end
 
   def show
