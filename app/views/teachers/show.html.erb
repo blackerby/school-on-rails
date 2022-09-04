@@ -10,7 +10,11 @@
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
   </div>
   <h4 class="m-3 text-center">
-    <%= link_to @department.name, department_path(@department) %>
+    <% if @department %>
+      <%= link_to @department.name, department_path(@department) %>
+    <% else %>
+      No Department Assigned
+    <% end %>
   </h4>
 </div>
 <div class="container text-center">
