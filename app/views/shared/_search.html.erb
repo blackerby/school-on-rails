@@ -1,0 +1,6 @@
+<div class="row mt-4 mb-4">
+  <%= form_with url: request.path, method: :get, class: 'd-flex me-4' do |f| %>
+    <%= f.text_field :query, class: 'form-control me-2', placeholder: 'Search', autofocus: true %>
+    <%= f.submit 'Search', class: 'btn btn-outline-success' %>
+  <% end %>
+</div>
