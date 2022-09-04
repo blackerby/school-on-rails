@@ -5,6 +5,6 @@ class BlocksController < ApplicationController
 
   def show
     @block = Block.find(params[:id])
-    @teachers = []
+    @teachers = @block.teachers
   end
 end
