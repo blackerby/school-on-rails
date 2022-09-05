@@ -11,6 +11,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     @department = @teacher.department
     @schedule = @teacher.schedule || Schedule.new
+    @blocks = @teacher.blocks || []
   end
 
   def edit

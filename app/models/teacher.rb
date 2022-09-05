@@ -10,4 +10,8 @@ class Teacher < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+
+  def blocks
+    meetings.map(&:block) if schedule
+  end
 end

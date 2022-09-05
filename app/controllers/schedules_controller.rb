@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @schedule = @teacher.build_schedule
-    @schedule.meetings.build
+    7.times { @schedule.meetings.build }
   end
 
   def create
@@ -15,9 +15,24 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def edit
+    @teacher = Teacher.find(params[:teacher_id])
+    @schedule = @teacher.schedule
+  end
+
+  def update
+    @teacher = Teacher.find(params[:id])
+    @schedule = @teacher.schedule
+    if @schedule.update(schedule_params)
+      redirect_to @teacher, notice: 'Schedule successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def schedule_params
-    params.require(:schedule).permit(meetings_attributes: %i[block_id classroom_id])
+    params.require(:schedule).permit(meetings_attributes: %i[id block_id classroom_id])
   end
 end

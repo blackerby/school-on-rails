@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'teachers#index'
 
   resources :teachers do
-    resources :schedules, only: %i[create new update destroy]
+    resources :schedules, except: %i[index show]
   end
 
   resources :departments
