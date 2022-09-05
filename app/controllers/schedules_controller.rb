@@ -1,8 +1,7 @@
 class SchedulesController < ApplicationController
   def new
     @teacher = Teacher.find(params[:teacher_id])
-    @schedule = @teacher.build_schedule
-    7.times { @schedule.meetings.build }
+    @schedule = @teacher.create_schedule
   end
 
   def create
@@ -18,6 +17,7 @@ class SchedulesController < ApplicationController
   def edit
     @teacher = Teacher.find(params[:teacher_id])
     @schedule = @teacher.schedule
+    @blocks = @schedule.meetings.map(&:block)
   end
 
   def update

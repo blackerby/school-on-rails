@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'teachers#index'
 
   resources :teachers do
-    resources :schedules, except: %i[index show]
+    resources :schedules, except: :index do
+      resources :meetings
+    end
   end
 
   resources :departments
