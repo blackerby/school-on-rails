@@ -10,9 +10,6 @@ class TeachersController < ApplicationController
   def show
     @teacher = Teacher.find(params[:id])
     @department = @teacher.department
-    @meetings = @teacher.meetings
-    @blocks = @teacher.blocks
-    @free = @teacher.free
   end
 
   def edit
@@ -30,18 +27,14 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
-    7.times { @teacher.meetings.build }
   end
 
   def create
     @teacher = Teacher.new(teacher_params)
-    begin
-      @teacher.save
-    rescue StandardError
-      @teacher.errors.add(:schedule, 'block/classroom combinations must be unique.')
-      render :new, status: :unprocessable_entity
-    else
+    if @teacher.save
       redirect_to @teacher, notice: 'Teacher successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -55,8 +48,7 @@ class TeachersController < ApplicationController
 
   def teacher_params
     params.require(:teacher).permit(
-      :first_name, :last_name, :email, :department_id,
-      meetings_attributes: %i[id block_id classroom_id]
+      :first_name, :last_name, :email, :department_id
     )
   end
 end

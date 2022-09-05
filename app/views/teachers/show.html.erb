@@ -17,20 +17,11 @@
   <div class="row">
     <div class="col">
       <h3>Teaches During</h3>
-      <table class="table table-striped mt-3">
-        <% @meetings.each do |meeting| %>
-          <tr>
-            <td>
-              <%= link_to meeting.block.name, meeting.block %> in
-              Classroom <%= link_to meeting.classroom.name, meeting.classroom %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+      <%# <%= render 'shared/table', objects: @free %>
     </div>
     <div class="col">
       <h3>Free During</h3>
-      <%= render 'shared/table', objects: @free %>
+      <%# <%= render 'shared/table', objects: @free %>
     </div>
   </div>
 </div>
