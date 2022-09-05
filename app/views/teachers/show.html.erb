@@ -8,6 +8,9 @@
     <%= link_to 'Delete', @teacher, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
+    <div class="container">
+      <%= link_to 'Add Schedule', new_teacher_schedule_path(@teacher) %>
+    </div>
   </div>
   <h4 class="m-3 text-center">
     <%= link_to_department(@department) %>
