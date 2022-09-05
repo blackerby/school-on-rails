@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_04_214137) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_033059) do
   create_table "blocks", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -29,13 +29,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_04_214137) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "teacher_blocks", force: :cascade do |t|
+  create_table "meetings", force: :cascade do |t|
     t.integer "teacher_id", null: false
     t.integer "block_id", null: false
+    t.integer "classroom_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["block_id"], name: "index_teacher_blocks_on_block_id"
-    t.index ["teacher_id"], name: "index_teacher_blocks_on_teacher_id"
+    t.index ["block_id", "teacher_id", "classroom_id"], name: "index_meetings_on_block_id_and_teacher_id_and_classroom_id", unique: true
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -48,7 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_04_214137) do
     t.index ["department_id"], name: "index_teachers_on_department_id"
   end
 
-  add_foreign_key "teacher_blocks", "blocks"
-  add_foreign_key "teacher_blocks", "teachers"
+  add_foreign_key "meetings", "blocks"
+  add_foreign_key "meetings", "classrooms"
+  add_foreign_key "meetings", "teachers"
   add_foreign_key "teachers", "departments"
 end

@@ -1,10 +1,9 @@
 class Block < ApplicationRecord
   include Filterable
 
-  has_many :teacher_blocks, dependent: :destroy
-  has_many :teachers, through: :teacher_blocks
-  has_many :classroom_blocks, dependent: :destroy
-  has_many :classrooms, through: :classroom_blocks
+  has_many :meetings, dependent: :destroy
+  has_many :teachers, through: :meetings
+  has_many :classrooms, through: :meetings
 
   validates :name, presence: true
 end

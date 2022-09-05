@@ -10,7 +10,9 @@ class TeachersController < ApplicationController
   def show
     @teacher = Teacher.find(params[:id])
     @department = @teacher.department
+    @meetings = @teacher.meetings
     @blocks = @teacher.blocks
+    @free = @teacher.free
   end
 
   def edit
@@ -28,6 +30,7 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
+    7.times { @teacher.meetings.build }
   end
 
   def create
@@ -48,6 +51,9 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:first_name, :last_name, :email, :department_id, block_ids: [])
+    params.require(:teacher).permit(
+      :first_name, :last_name, :email, :department_id,
+      meetings_attributes: %i[id block_id classroom_id]
+    )
   end
 end

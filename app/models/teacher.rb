@@ -1,7 +1,9 @@
 class Teacher < ApplicationRecord
   belongs_to :department, optional: true
-  has_many :teacher_blocks, dependent: :destroy
-  has_many :blocks, through: :teacher_blocks
+  has_many :meetings, dependent: :destroy
+  has_many :blocks, through: :meetings
+
+  accepts_nested_attributes_for :meetings
 
   scope :filter_by_name, ->(name) { where('first_name LIKE :name OR last_name LIKE :name', name: "%#{name}%") }
 
@@ -9,6 +11,10 @@ class Teacher < ApplicationRecord
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def blocks
+    meetings.map(&:block)
   end
 
   def free
