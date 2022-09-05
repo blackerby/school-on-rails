@@ -35,10 +35,13 @@ class TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.new(teacher_params)
-    if @teacher.save
-      redirect_to @teacher, notice: 'Teacher successfully created.'
-    else
+    begin
+      @teacher.save
+    rescue StandardError
+      @teacher.errors.add(:schedule, 'block/classroom combinations must be unique.')
       render :new, status: :unprocessable_entity
+    else
+      redirect_to @teacher, notice: 'Teacher successfully created.'
     end
   end
 
