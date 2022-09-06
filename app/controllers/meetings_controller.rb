@@ -16,6 +16,12 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def edit
+    @teacher = Teacher.find(params[:teacher_id])
+    @schedule = Schedule.find(params[:schedule_id])
+    @meeting = Meeting.find(params[:id])
+  end
+
   def destroy
     @teacher = Teacher.find(params[:teacher_id])
     @schedule = @teacher.schedule

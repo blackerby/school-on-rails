@@ -1,2 +1,2 @@
-- user level uniqueness error feedback for duplicate meetings
-- allow null values in teacher form schedule
+- cardinality limit on schedule
+- classroom/block uniqueness across teachers
