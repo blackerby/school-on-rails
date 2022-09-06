@@ -7,7 +7,7 @@
         <% @meetings.each do |meeting| %>
           <tr>
             <td>
-              <%= link_to meeting.schedule.teacher.name, meeting.schedule.teacher %> in Classroom
+              <%= link_to meeting.teacher.name, meeting.teacher %> in Classroom
               <%= link_to meeting.classroom.name, meeting.classroom %>
             </td>
           </tr>
