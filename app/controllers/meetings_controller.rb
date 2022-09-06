@@ -22,7 +22,20 @@ class MeetingsController < ApplicationController
     redirect_to teacher_url(@teacher), status: :see_other, alert: 'Class meeting successfully deleted.'
   end
 
-  def edit; end
+  def edit
+    @teacher = Teacher.find(params[:teacher_id])
+    @meeting = Meeting.find(params[:id])
+  end
+
+  def update
+    @teacher = Teacher.find(params[:teacher_id])
+    @meeting = Meeting.find(params[:id])
+    if @meeting.update(meeting_params)
+      redirect_to @teacher, notice: 'Class meeting successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   private
 
