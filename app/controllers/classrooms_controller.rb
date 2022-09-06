@@ -9,5 +9,6 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
+    @meetings = @classroom.meetings
   end
 end

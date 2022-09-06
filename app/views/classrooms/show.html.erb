@@ -10,11 +10,20 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <h3>Teaches During</h3>
-      <%# <%= render 'shared/table', objects: @blocks%>
+      <h3>Occupied</h3>
+      <table class="table table-striped mt-3">
+        <% @meetings.each do |meeting| %>
+          <tr>
+            <td>
+              <%= link_to meeting.block.name, meeting.block %> by
+              <%= link_to meeting.schedule.teacher.name, meeting.schedule.teacher %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
     </div>
     <div class="col">
-      <h3>Free During</h3>
+      <h3>Free</h3>
       <%# <%= render 'shared/table', objects: @teacher.free %>
     </div>
   </div>
