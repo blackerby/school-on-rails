@@ -25,10 +25,11 @@
     <div class="col">
       <h3>Teaches During</h3>
       <table class="table table-striped mt-3">
-        <% @blocks.each do |block| %>
+        <% @meetings.each do |meeting| %>
           <tr>
             <td>
-              <%= link_to block.name, block %> in Classroom
+              <%= link_to meeting.block.name, meeting.block %> in Classroom
+              <%= link_to meeting.classroom.name, meeting.classroom %>
             </td>
           </tr>
         <% end %>

@@ -10,8 +10,8 @@ class TeachersController < ApplicationController
   def show
     @teacher = Teacher.find(params[:id])
     @department = @teacher.department
-    @schedule = @teacher.schedule || Schedule.new
-    @blocks = @teacher.blocks || []
+    @schedule = @teacher.schedule
+    @meetings = @schedule.meetings
   end
 
   def edit
