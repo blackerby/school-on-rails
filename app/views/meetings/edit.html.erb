@@ -1,7 +1,0 @@
-<h1>Change Classroom for <%= @teacher.name %>'s <%= @meeting.block.name %> Block Class</h1>
-<%= form_with(model: [@teacher, @schedule, @meeting]) do |f| %>
-  <%= render 'shared/errors', object: @meeting %>
-  <%= f.label :classroom, class: 'form-label' %>
-  <%= f.collection_select :classroom_id, Classroom.all, :id, :name, {}, { class: 'form-select' } %>
-  <%= f.submit class: 'mt-3 btn btn-primary'%>
-<% end %>
