@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  resources :meetings
   root to: 'teachers#index'
 
-  resources :teachers
-
   resources :departments
-  resources :blocks
-  resources :classrooms
+
+  resources :blocks do
+    resources :meetings
+  end
+
+  resources :classrooms do
+    resources :meetings
+  end
+
+  resources :teachers do
+    resources :meetings
+  end
 end
