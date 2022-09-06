@@ -2,6 +2,7 @@
   <h1><%= @block.name %> Block</h1>
   <div class="row">
     <div class="col">
+      <h3>Teaching</h3>
       <table class="table table-striped mt-3">
         <% @meetings.each do |meeting| %>
           <tr>
@@ -12,6 +13,10 @@
           </tr>
         <% end %>
       </table>
+    </div>
+    <div class="col">
+      <h3>Free</h3>
+      <%= render 'shared/table', objects: @free %>
     </div>
   </div>
 </div>

@@ -6,4 +6,8 @@ class Classroom < ApplicationRecord
   def meetings
     Meeting.where(classroom_id: id)
   end
+
+  def free_blocks
+    Block.where.not(id: meetings)
+  end
 end

@@ -9,10 +9,10 @@
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
     <div class="container">
-      <% if @teacher.schedule %>
-        <%= link_to 'Edit Schedule', edit_teacher_schedule_path(@teacher, @schedule) %>
+      <% if @schedule.id.nil? %>
+        <%= link_to 'Create Schedule', new_teacher_schedule_path(@teacher) %>
       <% else %>
-        <%= link_to 'Add Schedule', new_teacher_schedule_path(@teacher) %>
+        <%= link_to 'Edit Schedule', edit_teacher_schedule_path(@teacher, @teacher.schedule) %>
       <% end %>
     </div>
   </div>

@@ -10,5 +10,6 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find(params[:id])
     @meetings = @classroom.meetings
+    @free = @classroom.free_blocks
   end
 end
