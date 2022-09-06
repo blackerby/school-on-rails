@@ -1,22 +1,45 @@
 <div class="container text-center">
   <h1><%= @block.name %> Block</h1>
-  <div class="row">
-    <div class="col">
-      <h3>Teaching</h3>
-      <table class="table table-striped mt-3">
-        <% @meetings.each do |meeting| %>
-          <tr>
-            <td>
-              <%= link_to meeting.teacher.name, meeting.teacher %> in Classroom
-              <%= link_to meeting.classroom.name, meeting.classroom %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+  <div class="col">
+    <h2>Teachers</h2>
+    <div class="row">
+      <div class="col">
+        <h3>Teaching</h3>
+        <table class="table table-striped mt-3">
+          <% @meetings.each do |meeting| %>
+            <tr>
+              <td>
+                <%= link_to meeting.teacher.name, meeting.teacher %> in Classroom
+                <%= link_to meeting.classroom.name, meeting.classroom %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col">
+        <h3>Free</h3>
+        <%= render 'shared/table', objects: @free_teachers %>
+      </div>
     </div>
-    <div class="col">
-      <h3>Free</h3>
-      <%= render 'shared/table', objects: @free %>
+    <div class="row">
+      <h2>Classrooms</h2>
+      <div class="col">
+        <h3>Occupied</h3>
+        <table class="table table-striped mt-3">
+          <% @meetings.each do |meeting| %>
+            <tr>
+              <td>
+                <%= link_to meeting.classroom.name, meeting.classroom %> by
+                <%= link_to meeting.teacher.name, meeting.teacher %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col">
+        <h3>Open</h3>
+        <%= render 'shared/table', objects: @free_classrooms %>
+      </div>
     </div>
   </div>
 </div>

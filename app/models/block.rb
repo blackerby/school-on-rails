@@ -10,4 +10,8 @@ class Block < ApplicationRecord
   def free_teachers
     Teacher.where.not(id: teacher_ids)
   end
+
+  def free_classrooms
+    Classroom.where.not(id: classroom_ids)
+  end
 end

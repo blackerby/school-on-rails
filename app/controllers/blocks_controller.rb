@@ -10,6 +10,8 @@ class BlocksController < ApplicationController
   def show
     @block = Block.find(params[:id])
     @meetings = @block.meetings
-    @free = @block.free_teachers
+    @free_teachers = @block.free_teachers
+    @classrooms = @block.classrooms
+    @free_classrooms = @block.free_classrooms
   end
 end
