@@ -8,17 +8,14 @@
     <%= link_to 'Delete', @teacher, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
-    <div class="container">
-      <% if @schedule.id.nil? %>
-        <%= link_to 'Create Schedule', new_teacher_schedule_path(@teacher) %>
-      <% else %>
-        <%= link_to 'Edit Schedule', edit_teacher_schedule_path(@teacher, @teacher.schedule) %>
-      <% end %>
-    </div>
   </div>
-  <h4 class="m-3 text-center">
-    <%= link_to_department(@department) %>
-  </h4>
+  <div class="container text-center">
+    <%= link_to 'Add Class', new_teacher_meeting_path(@teacher) %>
+  </div>
+</div>
+<h4 class="m-3 text-center">
+  <%= link_to_department(@department) %>
+</h4>
 </div>
 <div class="container text-center">
   <div class="row">
@@ -30,6 +27,13 @@
             <td>
               <%= link_to meeting.block.name, meeting.block %> in Classroom
               <%= link_to meeting.classroom.name, meeting.classroom %>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_teacher_meeting_path(@teacher, meeting) %>
+            </td>
+            <td><%= link_to 'Delete', teacher_meeting_path(@teacher, meeting), 
+                data: { turbo_method: :delete, 
+                        turbo_confirm: "Are you sure you want to delete #{meeting.block.name} from #{@teacher.name}'s schedule?" } %>
             </td>
           </tr>
         <% end %>

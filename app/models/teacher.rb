@@ -11,4 +11,8 @@ class Teacher < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+
+  def free_blocks
+    Block.where.not(id: block_ids)
+  end
 end

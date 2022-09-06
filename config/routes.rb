@@ -3,13 +3,9 @@ Rails.application.routes.draw do
 
   resources :departments
 
-  resources :blocks do
-    resources :meetings
-  end
+  resources :blocks
 
-  resources :classrooms do
-    resources :meetings
-  end
+  resources :classrooms
 
   resources :teachers do
     resources :meetings
