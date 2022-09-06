@@ -1,13 +1,9 @@
 class Block < ApplicationRecord
   include Filterable
 
+  has_many :meetings
+  has_many :teachers, through: :meetings
+  has_many :classrooms, through: :meetings
+
   validates :name, presence: true
-
-  def meetings
-    Meeting.where(block_id: id)
-  end
-
-  def free_teachers
-    Teacher.where.not(id: meetings.map(&:schedule).map(&:teacher))
-  end
 end

@@ -1,7 +1,8 @@
 class Teacher < ApplicationRecord
-  belongs_to :department, optional: true
-  has_one :schedule, dependent: :destroy
-  delegate :meetings, to: :schedule
+  belongs_to :department
+  has_many :meetings
+  has_many :classrooms, through: :meetings
+  has_many :blocks, through: :meetings
 
   scope :filter_by_name, ->(name) { where('first_name LIKE :name OR last_name LIKE :name', name: "%#{name}%") }
 
@@ -9,13 +10,5 @@ class Teacher < ApplicationRecord
 
   def name
     "#{first_name} #{last_name}"
-  end
-
-  def blocks
-    meetings.map(&:block) if schedule
-  end
-
-  def free
-    Block.where.not(id: meetings.map(&:block_id))
   end
 end
