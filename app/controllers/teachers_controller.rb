@@ -12,6 +12,7 @@ class TeachersController < ApplicationController
     @department = @teacher.department
     @schedule = @teacher.schedule
     @meetings = @schedule.meetings
+    @free = @teacher.free
   end
 
   def edit

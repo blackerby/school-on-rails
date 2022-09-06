@@ -14,4 +14,8 @@ class Teacher < ApplicationRecord
   def blocks
     meetings.map(&:block) if schedule
   end
+
+  def free
+    Block.where.not(id: meetings.map(&:block_id))
+  end
 end
