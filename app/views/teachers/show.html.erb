@@ -24,7 +24,15 @@
   <div class="row">
     <div class="col">
       <h3>Teaches During</h3>
-      <%= render 'shared/table', objects: @blocks %>
+      <table class="table table-striped mt-3">
+        <% @blocks.each do |block| %>
+          <tr>
+            <td>
+              <%= link_to block.name, block %> in Classroom
+            </td>
+          </tr>
+        <% end %>
+      </table>
     </div>
     <div class="col">
       <h3>Free During</h3>

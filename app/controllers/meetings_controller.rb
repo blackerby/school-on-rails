@@ -16,6 +16,14 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def destroy
+    @teacher = Teacher.find(params[:teacher_id])
+    @schedule = @teacher.schedule
+    @meeting = Meeting.find(params[:id])
+    @meeting.destroy
+    redirect_to edit_teacher_schedule_url(@teacher, @schedule), status: :see_other, alert: 'Class successfully deleted.'
+  end
+
   private
 
   def meeting_params
