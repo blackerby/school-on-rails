@@ -9,6 +9,6 @@ class BlocksController < ApplicationController
 
   def show
     @block = Block.find(params[:id])
-    @teachers = @block.teachers
+    @meetings = @block.meetings
   end
 end

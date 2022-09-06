@@ -3,7 +3,7 @@ class Block < ApplicationRecord
 
   validates :name, presence: true
 
-  def teachers
-    Meeting.where(block_id: id).map(&:schedule).map(&:teacher)
+  def meetings
+    Meeting.where(block_id: id)
   end
 end

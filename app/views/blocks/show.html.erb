@@ -2,7 +2,16 @@
   <h1><%= @block.name %> Block</h1>
   <div class="row">
     <div class="col">
-      <%= render 'shared/table', objects: @teachers%>
+      <table class="table table-striped mt-3">
+        <% @meetings.each do |meeting| %>
+          <tr>
+            <td>
+              <%= link_to meeting.schedule.teacher.name, meeting.schedule.teacher %> in Classroom
+              <%= link_to meeting.classroom.name, meeting.classroom %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>

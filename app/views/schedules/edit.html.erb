@@ -5,10 +5,12 @@
     <tr>
       <td>
         <%= link_to meeting.block.name, meeting.block %> in Classroom
+        <%= link_to meeting.classroom.name, meeting.classroom%>
       </td>
       <td> <%= link_to 'Delete', teacher_schedule_meeting_path(@teacher, @schedule, meeting), 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{meeting.block.name} from #{@teacher.name}'s schedule?" } %>
-      </tr>
-    <% end %>
-  </table>
+      </td>
+    </tr>
+  <% end %>
+</table>
