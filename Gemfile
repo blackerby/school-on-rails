@@ -25,7 +25,6 @@ gem 'stimulus-rails'
 gem 'sassc-rails'
 
 # Bootstrap
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.2.0'
 
 group :development, :test do
