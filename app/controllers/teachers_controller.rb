@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
     @teachers = if params[:query].present?
                   Teacher.filter_by_name(params[:query])
                 else
-                  Teacher.all
+                  Teacher.order(:last_name)
                 end
   end
 

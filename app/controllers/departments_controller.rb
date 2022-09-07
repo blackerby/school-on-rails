@@ -3,7 +3,7 @@ class DepartmentsController < ApplicationController
     @departments = if params[:query].present?
                      Department.filter_by_name(params[:query])
                    else
-                     Department.all
+                     Department.order(:name)
                    end
   end
 
