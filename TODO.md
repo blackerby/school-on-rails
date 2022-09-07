@@ -1,2 +1,9 @@
 - cardinality limit on schedule
 - classroom/block uniqueness across teachers
+- add/edit/delete classrooms
+- views
+  - move Add New link on index pages
+  - cancel links on create views
+- custom error pages
+- Dynamic add class meetings (Hotwire)
+- tests

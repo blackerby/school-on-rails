@@ -8,6 +8,6 @@ class Classroom < ApplicationRecord
   validates :name, presence: true
 
   def free_blocks
-    Classroom.where.not(id: block_ids)
+    Block.where.not(id: block_ids)
   end
 end
