@@ -7,3 +7,7 @@
 - custom error pages
 - Dynamic add class meetings (Hotwire)
 - tests
+- admin account(s)
+- order listings on index and show pages
+- add class view markup improvement
+  - provide prompts on selects
