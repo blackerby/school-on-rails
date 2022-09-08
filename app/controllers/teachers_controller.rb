@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_action :set_teacher, except: %i[index new create]
+
   def index
     @teachers = if params[:query].present?
                   Teacher.filter_by_name(params[:query])
@@ -8,18 +10,14 @@ class TeachersController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(params[:id])
     @department = @teacher.department
     @meetings = @teacher.meetings
     @free = @teacher.free_blocks
   end
 
-  def edit
-    @teacher = Teacher.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @teacher = Teacher.find(params[:id])
     if @teacher.update(teacher_params)
       redirect_to @teacher, notice: 'Teacher successfully updated.'
     else
@@ -41,7 +39,6 @@ class TeachersController < ApplicationController
   end
 
   def destroy
-    @teacher = Teacher.find(params[:id])
     @teacher.destroy
     redirect_to teachers_url, status: :see_other, alert: 'Teacher successfully deleted.'
   end
@@ -52,5 +49,9 @@ class TeachersController < ApplicationController
     params.require(:teacher).permit(
       :first_name, :last_name, :email, :department_id
     )
+  end
+
+  def set_teacher
+    @teacher = Teacher.find(params[:id])
   end
 end
