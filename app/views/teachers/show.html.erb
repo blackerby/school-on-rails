@@ -10,7 +10,9 @@
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
   </div>
   <div class="container text-center">
-    <%= link_to 'Add Class', new_teacher_meeting_path(@teacher) %>
+    <%= turbo_frame_tag @teacher do %>
+      <%= link_to 'Add Class', new_teacher_meeting_path(@teacher) %>
+    <% end %>
   </div>
 </div>
 <h4 class="m-3 text-center">
