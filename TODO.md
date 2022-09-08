@@ -15,3 +15,7 @@
     - block/teacher
     - classroom/block
 - limit add/edit class selects to available blocks/classrooms
+- dynamic selects for add class page
+- course title for add class page
+  - update seeds
+  - update views
