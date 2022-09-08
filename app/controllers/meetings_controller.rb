@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :set_teacher
+  before_action :set_meeting, except: %i[new create]
 
   def new
     @meeting = @teacher.meetings.new
@@ -16,17 +17,13 @@ class MeetingsController < ApplicationController
   end
 
   def destroy
-    @meeting = Meeting.find(params[:id])
     @meeting.destroy
     redirect_to teacher_url(@teacher), status: :see_other, alert: 'Class meeting successfully deleted.'
   end
 
-  def edit
-    @meeting = Meeting.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @meeting = Meeting.find(params[:id])
     if @meeting.update(meeting_params)
       redirect_to @teacher, notice: 'Class meeting successfully updated.'
     else
@@ -42,5 +39,9 @@ class MeetingsController < ApplicationController
 
   def set_teacher
     @teacher = Teacher.find(params[:teacher_id])
+  end
+
+  def set_meeting
+    @meeting = Meeting.find(params[:id])
   end
 end
