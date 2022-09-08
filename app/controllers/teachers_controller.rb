@@ -11,7 +11,7 @@ class TeachersController < ApplicationController
 
   def show
     @department = @teacher.department
-    @meetings = @teacher.meetings
+    @meetings = @teacher.meetings.order(:block_id)
     @free = @teacher.free_blocks
   end
 

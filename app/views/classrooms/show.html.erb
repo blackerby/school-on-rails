@@ -12,11 +12,21 @@
     <div class="col">
       <h3>Occupied</h3>
       <table class="table table-striped mt-3">
+        <tr>
+          <th>Block</th>
+          <th>Teacher</th>
+          <th>Course Title</th>
+        </tr>
         <% @meetings.each do |meeting| %>
           <tr>
             <td>
-              <%= link_to meeting.block.name, meeting.block %> by
+              <%= link_to meeting.block.name, meeting.block %>
+            </td>
+            <td>
               <%= link_to meeting.teacher.name, meeting.teacher %>
+            </td>
+            <td>
+              <%= meeting.course_title %>
             </td>
           </tr>
         <% end %>

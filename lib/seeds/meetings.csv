@@ -1,157 +1,157 @@
-teacher_id,block_id,classroom_id
-1,3,1
-39,2,2
-39,3,2
-39,4,2
-39,6,2
-1,1,3
-16,1,4
-16,2,4
-16,3,4
-16,7,4
-8,4,5
-8,6,5
-2,2,6
-2,4,6
-2,5,6
-2,6,6
-16,5,4
-39,7,7
-2,1,6
-8,1,5
-8,2,5
-8,5,5
-7,2,8
-3,2,9
-5,2,10
-23,2,1
-7,7,11
-7,3,11
-7,1,11
-7,4,8
-17,7,2
-3,3,9
-3,7,9
-3,1,9
-3,4,9
-5,4,10
-5,7,12
-5,3,5
-5,1,2
-5,5,10
-24,7,1
-23,3,8
-24,5,1
-23,7,8
-24,1,1
-24,4,1
-23,1,8
-23,6,8
-11,4,12
-11,5,12
-36,3,10
-9,2,3
-9,5,3
-12,1,13
-12,3,13
-12,6,13
-12,7,13
-9,3,3
-9,4,3
-36,8,6
-38,3,12
-38,4,4
-19,1,7
-9,7,3
-11,6,14
-19,2,7
-19,4,7
-19,5,7
-19,6,7
-6,1,15
-6,3,15
-34,1,16
-34,3,16
-34,5,16
-14,1,14
-14,3,14
-14,7,6
-27,5,17
-27,6,17
-27,3,17
-27,7,17
-6,5,14
-6,7,14
-26,2,15
-26,4,15
-26,3,7
-26,5,13
-26,7,15
-6,6,10
-21,1,10
-27,1,17
-34,4,16
-34,7,16
-15,6,16
-14,4,14
-14,5,15
-18,5,18
-22,3,19
-33,1,18
-33,7,20
-22,2,19
-22,4,19
-22,7,19
-25,1,21
-25,2,21
-25,5,21
-31,2,20
-31,4,20
-31,5,20
-31,6,20
-18,3,18
-18,4,18
-18,6,18
-18,7,18
-25,4,21
-25,7,21
-31,7,20
-22,6,19
-33,2,18
-33,5,19
-33,6,21
-30,6,22
-13,4,23
-13,5,23
-30,3,22
-30,2,22
-28,2,24
-10,2,25
-10,4,25
-10,6,25
-20,1,26
-13,1,23
-13,3,23
-30,1,22
-28,6,24
-10,1,27
-13,2,23
-30,7,22
-20,4,28
-40,2,13
-40,7,5
-10,7,29
-28,1,24
-4,1,25
-4,7,25
-4,5,25
-4,4,30
-4,3,25
-29,1,31
-32,3,31
-32,7,32
-32,6,33
-29,2,32
-29,4,32
-29,5,32
-29,6,32
+teacher_id,block_id,classroom_id,course_title
+1,3,1,Advanced Poetry (1)
+39,2,2,AP English Language and Composition (2)
+39,3,2,AP English Language and Composition (1)
+39,4,2,AP English Language and Composition (3)
+39,6,2,AP English Language and Composition (4)
+1,1,3,Contemporary African-American Voices (1)
+16,1,4,Critical Reading & Analytical Writing (1)
+16,2,4,Critical Reading & Analytical Writing (3)
+16,3,4,Critical Reading & Analytical Writing (4)
+16,7,4,Critical Reading & Analytical Writing (2)
+8,4,5,English 8 (2)
+8,6,5,English 8 (1)
+2,2,6,English 9 (2)
+2,4,6,English 9 (4)
+2,5,6,English 9 (3)
+2,6,6,English 9 (1)
+16,5,4,Film Rhetoric (1)
+39,7,7,Literary Genres:  The Comedy (1)
+2,1,6,Shakespearean Comedies & Tragedies (1)
+8,1,5,The Art of the Personal Narrative (1)
+8,2,5,The Art of the Personal Narrative (2)
+8,5,5,The Art of the Personal Narrative (3)
+7,2,8,AP Chinese (1)
+3,2,9,AP French Language & Culture (1)
+5,2,10,AP Latin (1)
+23,2,1,AP Spanish Language & Culture (1)
+7,7,11,Chinese I (1)
+7,3,11,Chinese II (1)
+7,1,11,Chinese III (1)
+7,4,8,Chinese IV (1)
+17,7,2,French I (1)
+3,3,9,French II (1)
+3,7,9,French II (2)
+3,1,9,French III (1)
+3,4,9,French IV (1)
+5,4,10,Intro to Ancient Greek (1)
+5,7,12,Latin I (1)
+5,3,5,Latin II (1)
+5,1,2,Latin III (1)
+5,5,10,Latin IV (1)
+24,7,1,Spanish I (1)
+23,3,8,Spanish II (3)
+24,5,1,Spanish II (1)
+23,7,8,Spanish II (2)
+24,1,1,Spanish III (2)
+24,4,1,Spanish III (1)
+23,1,8,Spanish IV (1)
+23,6,8,Spanish IV (2)
+11,4,12,8th Grade Social Studies (2)
+11,5,12,8th Grade Social Studies (1)
+36,3,10,American Government (1)
+9,2,3,AP European History (2)
+9,5,3,AP European History (1)
+12,1,13,AP United States History (1)
+12,3,13,AP United States History (4)
+12,6,13,AP United States History (3)
+12,7,13,AP United States History (2)
+9,3,3,AP World History:  1500 to Present (1)
+9,4,3,AP World History:  1500 to Present (2)
+36,8,6,Constitutional Law and Civil Rights (1)
+38,3,12,Economics (1)
+38,4,4,Economics (2)
+19,1,7,Feminist Theory (1)
+9,7,3,International Relations (1)
+11,6,14,Reconstruction (1)
+19,2,7,World History: To 1500 (B)
+19,4,7,World History: To 1500 (D)
+19,5,7,World History: To 1500 (E)
+19,6,7,World History: To 1500 (F)
+6,1,15,Advanced Algebra I (1)
+6,3,15,Advanced Algebra I (2)
+34,1,16,Advanced Algebra II w/ Trigonometry (2)
+34,3,16,Advanced Algebra II w/ Trigonometry (1)
+34,5,16,Advanced Algebra II w/ Trigonometry (3)
+14,1,14,Advanced Geometry (1)
+14,3,14,Advanced Geometry (3)
+14,7,6,Advanced Geometry (2)
+27,5,17,Advanced Precalculus (1)
+27,6,17,Advanced Precalculus (2)
+27,3,17,Algebra I (2)
+27,7,17,Algebra I (1)
+6,5,14,Algebra II w/ Trigonometry (1)
+6,7,14,Algebra II w/ Trigonometry (2)
+26,2,15,AP Calculus BC (1)
+26,4,15,AP Calculus BC (2)
+26,3,7,AP Statistics (2)
+26,5,13,AP Statistics (3)
+26,7,15,AP Statistics (1)
+6,6,10,Calculus (1)
+21,1,10,Differential Equations (1)
+27,1,17,Foundations in Algebra and Geometry (1)
+34,4,16,Geometry (1)
+34,7,16,Geometry (2)
+15,6,16,Linear Algebra (1)
+14,4,14,Precalculus (1)
+14,5,15,Precalculus (2)
+18,5,18,Anatomy & Physiology I (1)
+22,3,19,AP Biology (1)
+33,1,18,AP Chemistry (1)
+33,7,20,AP Chemistry (2)
+22,2,19,AP Environmental Science (3)
+22,4,19,AP Environmental Science (1)
+22,7,19,AP Environmental Science (2)
+25,1,21,AP Physics 1 (1)
+25,2,21,AP Physics 1 (2)
+25,5,21,AP Physics C (1)
+31,2,20,Biology (2)
+31,4,20,Biology (4)
+31,5,20,Biology (3)
+31,6,20,Biology (1)
+18,3,18,Chemistry (3)
+18,4,18,Chemistry (4)
+18,6,18,Chemistry (1)
+18,7,18,Chemistry (2)
+25,4,21,Conceptual Physics (1)
+25,7,21,Conceptual Physics (2)
+31,7,20,Exploration of the Microscopic World (1)
+22,6,19,Forensics (1)
+33,2,18,Organic Chemistry (1)
+33,5,19,Science 8 (2)
+33,6,21,Science 8 (1)
+30,6,22,Adobe Photoshop I (1)
+13,4,23,Advanced Contemporary Music Ensemble (2)
+13,5,23,Advanced Contemporary Music Ensemble (1)
+30,3,22,Advanced Methods in Photography (1)
+30,2,22,Art 8 (1)
+28,2,24,Art 8 (2)
+10,2,25,Art History (3)
+10,4,25,Art History (1)
+10,6,25,Art History (2)
+20,1,26,Classical Music Ensemble (1)
+13,1,23,Contemporary Music Ensemble (2)
+13,3,23,Contemporary Music Ensemble (1)
+30,1,22,Digital Photography (1)
+28,6,24,Directing and Stage Management (1)
+10,1,27,Drawing and Design (1)
+13,2,23,Intro to Contemporary Music Ensemble (1)
+30,7,22,Introduction to Black & White Photography (1)
+20,4,28,Introduction to Music Theory (1)
+40,2,13,Music History (2)
+40,7,5,Music History (1)
+10,7,29,Sculpture (1)
+28,1,24,Theatrical Design & Stagecraft (1)
+4,1,25,AP Computer Science A (2)
+4,7,25,AP Computer Science A (1)
+4,5,25,Intro to Computer Programming (1)
+4,4,30,Intro to Engineering - 3D Design (1)
+4,3,25,Web Design (1)
+29,1,31,8th Grade PE (1)
+32,3,31,8th Grade PE (2)
+32,7,32,Foundation of Sports Medicine and Safety (1)
+32,6,33,Injury Prevention & Weight Training (1)
+29,2,32,Well/Fit (3)
+29,4,32,Well/Fit (2)
+29,5,32,Well/Fit (4)
+29,6,32,Well/Fit (1)

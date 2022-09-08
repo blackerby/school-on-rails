@@ -24,7 +24,7 @@ class ClassroomsController < ApplicationController
   end
 
   def show
-    @meetings = @classroom.meetings
+    @meetings = @classroom.meetings.order(:block_id)
     @free = @classroom.free_blocks
   end
 

@@ -34,7 +34,7 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:classroom_id, :block_id)
+    params.require(:meeting).permit(:classroom_id, :block_id, :course_title)
   end
 
   def set_teacher
