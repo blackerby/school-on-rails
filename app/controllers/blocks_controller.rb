@@ -9,7 +9,7 @@ class BlocksController < ApplicationController
 
   def show
     @block = Block.find(params[:id])
-    @meetings = @block.meetings
+    @meetings = @block.meetings.order(:teacher_id)
     @free_teachers = @block.free_teachers
     @classrooms = @block.classrooms
     @free_classrooms = @block.free_classrooms

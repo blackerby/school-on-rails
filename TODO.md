@@ -1,17 +1,9 @@
 - admin user account(s)
-- cardinality limit on schedule
-- add/edit/delete classrooms
-- views
-  - move Add New link on index pages
-  - cancel links on create views
 - custom error pages
 - Dynamic add class meetings (Hotwire)
 - tests
-- order listings on index and show pages
-- add class view markup improvement
-  - provide prompts on selects
 - add database-level uniqueness constraints
   - meeting
     - block/teacher
-    - classroom/block
 - limit add/edit class selects to available blocks/classrooms
+  - dynamic selects for add class page
