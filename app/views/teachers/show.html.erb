@@ -31,6 +31,7 @@
           <th>Actions</th>
         </tr>
         <% @meetings.each do |meeting| %>
+          <!-- wrap row in special tag for class update -->
           <tr>
             <td>
               <%= link_to meeting.block.name, meeting.block %>
@@ -53,6 +54,7 @@
     </div>
     <div class="col">
       <h3>Free</h3>
+      <!-- wrap in special tag for class update -->
       <%= render 'shared/table', objects: @free %>
     </div>
   </div>

@@ -1,9 +1,8 @@
 - admin user account(s)
 - custom error pages
 - Dynamic add class meetings (Hotwire)
+  - turbo streams -- what/how?
 - tests
 - add database-level uniqueness constraints
   - meeting
     - block/teacher
-- limit add/edit class selects to available blocks/classrooms
-  - dynamic selects for add class page
