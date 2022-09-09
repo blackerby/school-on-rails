@@ -2,7 +2,7 @@
   <% objects.each do |object| %>
     <tr>
       <td>
-        <%= link_to object.name, object %>
+        <%= link_to object.name, object, data: { turbo_frame: '_top' } %>
       </td>
     </tr>
   <% end %>
