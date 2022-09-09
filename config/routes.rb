@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :departments
 
-  resources :blocks
+  resources :blocks do
+    collection do
+      get :free_classrooms
+    end
+  end
 
   resources :classrooms
 
