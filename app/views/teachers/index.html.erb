@@ -1,4 +1,6 @@
 <h1>All Teachers</h1>
 <%= link_to 'Add New Teacher', new_teacher_path, class: 'mt-2 btn btn-outline-primary' %>
 <%= render 'shared/search' %>
-<%= render 'shared/table', objects: @teachers %>
+<%= turbo_frame_tag 'results' do %>
+  <%= render 'shared/table', objects: @teachers %>
+<% end %>

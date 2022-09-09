@@ -1,9 +1,14 @@
 <div class="row mt-4 mb-4">
   <%= form_with url: request.path, method: :get, 
-        data: { turbo_frame: "results", turbo_action: "advance" },
+        data: { 
+          turbo_frame: 'results',
+          turbo_action: 'advance',
+          controller: 'form',
+          action: 'input->form#submit'
+        },
         class: 'd-flex me-4' do |f| %>
     <%= f.text_field :query, class: 'form-control me-2', placeholder: 'Search', autofocus: true %>
     <%= f.submit 'Search', class: 'btn btn-outline-success' %>
-    <%= link_to 'Cancel', request.path, class: 'me-3 btn' %>
+    <%= link_to 'Clear', request.path, class: 'me-3 btn' %>
   <% end %>
 </div>
