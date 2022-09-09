@@ -1,8 +1,13 @@
-- admin user account(s)
-- custom error pages
-- Dynamic add class meetings (Hotwire)
-  - turbo streams -- what/how?
-- tests
+- add actions column to table partial
+  - edit
+  - delete
+- add building model
+  - has many classrooms
 - add database-level uniqueness constraints
   - meeting
     - block/teacher
+- Dynamic add class meetings (Hotwire)
+  - turbo streams -- what/how?
+- admin user account(s)
+- custom error pages
+- tests
