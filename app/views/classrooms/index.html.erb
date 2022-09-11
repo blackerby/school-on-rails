@@ -1,4 +1,8 @@
 <h1>All Classrooms</h1>
-<%= link_to 'Add New Classroom', new_classroom_path, class: 'mt-2 btn btn-outline-primary' %>
+<% if signed_in? %>
+  <%= link_to 'Add New Classroom', new_classroom_path, class: 'mt-2 btn btn-outline-primary' %>
+<% end %>
 <%= render 'shared/search' %>
-<%= render 'shared/table', objects: @classrooms %>
+<%= turbo_frame_tag 'results' do %>
+  <%= render 'shared/table', objects: @classrooms %>
+<% end %>

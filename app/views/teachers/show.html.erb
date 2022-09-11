@@ -3,17 +3,19 @@
   <div class="container text-center">
     <%= mail_to @teacher.email %>
   </div>
-  <div class="container text-center">
-    <%= link_to 'Edit', edit_teacher_path(@teacher) %>
-    <%= link_to 'Delete', @teacher, 
+  <% if signed_in? %>
+    <div class="container text-center">
+      <%= link_to 'Edit', edit_teacher_path(@teacher) %>
+      <%= link_to 'Delete', @teacher, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@teacher.first_name} #{@teacher.last_name}?" } %>
-  </div>
-  <div class="container text-center">
-    <%= turbo_frame_tag @teacher do %>
-      <%= link_to 'Add Class', new_teacher_meeting_path(@teacher) %>
-    <% end %>
-  </div>
+    </div>
+    <div class="container text-center">
+      <%= turbo_frame_tag @teacher do %>
+        <%= link_to 'Add Class', new_teacher_meeting_path(@teacher) %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 <h4 class="m-3 text-center">
   <%= link_to_department(@department) %>
@@ -28,7 +30,9 @@
           <th>Teacher</th>
           <th>Classroom</th>
           <th>Course Title</th>
-          <th>Actions</th>
+          <% if signed_in? %>
+            <th>Actions</th>
+          <% end %>
         </tr>
         <% @meetings.each do |meeting| %>
           <!-- wrap row in special tag for class update -->
@@ -42,12 +46,14 @@
             <td>
               <%= meeting.course_title %>
             </td>
-            <td>
-              <%= link_to 'Edit', edit_teacher_meeting_path(@teacher, meeting) %>
-              <%= link_to 'Delete', teacher_meeting_path(@teacher, meeting), 
+            <% if signed_in? %>
+              <td>
+                <%= link_to 'Edit', edit_teacher_meeting_path(@teacher, meeting) %>
+                <%= link_to 'Delete', teacher_meeting_path(@teacher, meeting), 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{meeting.block.name} from #{@teacher.name}'s schedule?" } %>
-            </td>
+              </td>
+            <% end %>
           </tr>
         <% end %>
       </table>

@@ -22,11 +22,13 @@
           <%= link_to 'Classrooms', classrooms_path, class: "nav-link #{active_class(classrooms_path)}" %>
         </li>
       </ul>
-      <ul class="navbar-nav float-end">
-        <li class="nav-item">
-          <a class="nav-link" href="/school/admin" id="admin">Admin Login</a>
-        </li>
-      </ul>
+      <% if signed_in? %>
+        <ul class="navbar-nav float-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/school/admin" id="admin">Admin Login</a>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </nav>
