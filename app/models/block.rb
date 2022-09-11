@@ -5,7 +5,7 @@ class Block < ApplicationRecord
   has_many :teachers, through: :meetings
   has_many :classrooms, through: :meetings
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def free_teachers
     Teacher.where.not(id: teacher_ids)

@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
     @meeting = @teacher.meetings.new(meeting_params)
 
     if @meeting.save
-      redirect_to teacher_path(@teacher), notice: 'Class meeting successfully created'
+      redirect_to teacher_url(@teacher), notice: 'Class meeting successfully created'
     else
       render :new, status: :unprocessable_entity
     end
