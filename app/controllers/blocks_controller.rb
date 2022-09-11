@@ -47,7 +47,7 @@ class BlocksController < ApplicationController
   def free_classrooms
     @block = Block.find(params[:block_id])
     @target = params[:target]
-    @free_classrooms = @block.free_classrooms.map(&:name)
+    @free_classrooms = @block.free_classrooms
     respond_to do |format|
       format.turbo_stream
     end
