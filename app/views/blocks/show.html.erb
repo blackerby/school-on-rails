@@ -9,15 +9,15 @@
   <div class="row">
     <div class="col">
       <h3>Teaching</h3>
-      <%= render 'teacher_list', objects: @meetings %>
+      <%= render 'shared/teacher_cards', objects: @meetings %>
     </div>
     <div class="col">
       <h3>Free</h3>
-      <%= render 'shared/free_list', objects: @free_teachers %>
+      <%= render 'shared/free_cards', objects: @free_teachers %>
     </div>
     <div class="col">
       <h3>Open Classrooms</h3>
-      <%= render 'shared/free_list', objects: @free_classrooms %>
+      <%= render 'shared/free_cards', objects: @free_classrooms %>
     </div>
   </div>
 </div>

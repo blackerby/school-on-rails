@@ -23,12 +23,15 @@
   <div class="row">
     <div class="col">
       <h3>Teaching</h3>
-      <%= render 'shared/meeting_list', objects: @meetings %>
+      <div id="classes">
+        <%= render 'shared/meeting_cards', objects: @meetings %>
+      </div>
     </div>
     <div class="col">
       <h3>Free</h3>
-      <!-- wrap in special tag for class update -->
-      <%= render 'shared/free_list', objects: @free %>
+      <div id="free">
+        <%= render 'shared/free_cards', objects: @free %>
+      </div>
     </div>
   </div>
 </div>

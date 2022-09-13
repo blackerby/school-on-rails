@@ -1,0 +1,11 @@
+<% objects.each do |object| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= object.course_title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <%= link_to object.block.name, object.block, data: { turbo_frame: '_top' } %> Block in
+        <%= link_to object.classroom.name, object.classroom, data: { turbo_frame: '_top' } %>
+      </h6>
+    </div>
+  </div>
+<% end %>
