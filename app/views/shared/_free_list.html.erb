@@ -1,0 +1,7 @@
+<ul class="list-group mt-4">
+  <% objects.each do |object| %>
+    <li class="list-group-item">
+      <%= link_to object.name, object, data: { turbo_frame: '_top' } %>
+    </li>
+  <% end %>
+</ul>

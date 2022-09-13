@@ -1,18 +1,16 @@
 <div class="container text-center">
   <h1><%= @department.name %></h1>
-  <% if signed_in? %>
-    <div class="container text-center">
-      <%= link_to 'Edit', edit_department_path(@department) %>
-      <%= link_to 'Delete', @department, 
+  <div class="container text-center">
+    <%= link_to 'Edit', edit_department_path(@department) %>
+    <%= link_to 'Delete', @department, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@department.name}?" } %>
-    </div>
-  <% end %>
+  </div>
 </div>
-<div class="container text-center">
+<div class="container">
   <div class="row">
     <div class="col">
-      <%= render 'shared/table', objects: @teachers%>
+      <%= render 'shared/list', objects: @teachers%>
     </div>
   </div>
 </div>

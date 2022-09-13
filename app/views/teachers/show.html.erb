@@ -23,39 +23,12 @@
   <div class="row">
     <div class="col">
       <h3>Teaching</h3>
-      <table class="table table-striped mt-3">
-        <tr>
-          <th>Teacher</th>
-          <th>Classroom</th>
-          <th>Course Title</th>
-          <th>Actions</th>
-        </tr>
-        <% @meetings.each do |meeting| %>
-          <!-- wrap row in special tag for class update -->
-          <tr>
-            <td>
-              <%= link_to meeting.block.name, meeting.block %>
-            </td>
-            <td>
-              <%= link_to meeting.classroom.name, meeting.classroom %>
-            </td>
-            <td>
-              <%= meeting.course_title %>
-            </td>
-            <td>
-              <%= link_to 'Edit', edit_teacher_meeting_path(@teacher, meeting) %>
-              <%= link_to 'Delete', teacher_meeting_path(@teacher, meeting), 
-                data: { turbo_method: :delete, 
-                        turbo_confirm: "Are you sure you want to delete #{meeting.block.name} from #{@teacher.name}'s schedule?" } %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+      <%= render 'shared/meeting_list', objects: @meetings %>
     </div>
     <div class="col">
       <h3>Free</h3>
       <!-- wrap in special tag for class update -->
-      <%= render 'shared/table', objects: @free %>
+      <%= render 'shared/free_list', objects: @free %>
     </div>
   </div>
 </div>

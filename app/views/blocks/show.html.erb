@@ -9,34 +9,15 @@
   <div class="row">
     <div class="col">
       <h3>Teaching</h3>
-      <table class="table table-striped mt-3">
-        <tr>
-          <th>Teacher</th>
-          <th>Classroom</th>
-          <th>Course Title</th>
-        </tr>
-        <% @meetings.each do |meeting| %>
-          <tr>
-            <td>
-              <%= link_to meeting.teacher.name, meeting.teacher %>
-            </td>
-            <td>
-              <%= link_to meeting.classroom.name, meeting.classroom %>
-            </td>
-            <td>
-              <%= meeting.course_title %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+      <%= render 'teacher_list', objects: @meetings %>
     </div>
     <div class="col">
       <h3>Free</h3>
-      <%= render 'shared/table', objects: @free_teachers %>
+      <%= render 'shared/free_list', objects: @free_teachers %>
     </div>
     <div class="col">
       <h3>Open Classrooms</h3>
-      <%= render 'shared/table', objects: @free_classrooms %>
+      <%= render 'shared/free_list', objects: @free_classrooms %>
     </div>
   </div>
 </div>
