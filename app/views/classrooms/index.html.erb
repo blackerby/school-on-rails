@@ -1,4 +1,5 @@
 <h1>All Classrooms</h1>
+<%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
   <%= render 'shared/list', objects: @classrooms %>
 <% end %>
