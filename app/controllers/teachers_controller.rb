@@ -15,34 +15,6 @@ class TeachersController < ApplicationController
     @free = @teacher.free_blocks
   end
 
-  def edit; end
-
-  def update
-    if @teacher.update(teacher_params)
-      redirect_to @teacher, notice: 'Teacher successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def new
-    @teacher = Teacher.new
-  end
-
-  def create
-    @teacher = Teacher.new(teacher_params)
-    if @teacher.save
-      redirect_to @teacher, notice: 'Teacher successfully created.'
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @teacher.destroy
-    redirect_to teachers_url, status: :see_other, alert: 'Teacher successfully deleted.'
-  end
-
   private
 
   def teacher_params

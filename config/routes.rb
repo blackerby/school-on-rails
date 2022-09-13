@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
   root to: 'teachers#index'
 
-  resources :departments
+  resources :departments, only: %i[index show]
 
-  resources :blocks do
-    collection do
-      get :free_classrooms
-    end
-  end
+  resources :blocks, only: %i[index show]
 
-  resources :classrooms
+  resources :classrooms, only: %i[index show]
 
-  resources :teachers do
+  resources :teachers, only: %i[index show] do
     resources :meetings
   end
 end

@@ -1,5 +1,4 @@
 <h1>All Departments</h1>
-<%= link_to 'Add New Department', new_department_path, class: 'mt-2 btn btn-outline-primary' %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
   <%= render 'shared/list', objects: @departments %>
