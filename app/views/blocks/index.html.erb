@@ -2,5 +2,5 @@
 <%= link_to 'Add New Block', new_block_path, class: 'mt-2 btn btn-outline-primary' %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
-  <%= render 'shared/table', objects: @blocks %>
+  <%= render 'shared/list', objects: @blocks %>
 <% end %>

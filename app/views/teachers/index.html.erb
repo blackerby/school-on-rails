@@ -2,5 +2,5 @@
 <%= link_to 'Add New Teacher', new_teacher_path, class: 'mt-2 btn btn-outline-primary' %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
-  <%= render 'shared/table', objects: @teachers %>
+  <%= render 'shared/list', objects: @teachers %>
 <% end %>

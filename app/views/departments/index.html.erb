@@ -2,5 +2,5 @@
 <%= link_to 'Add New Department', new_department_path, class: 'mt-2 btn btn-outline-primary' %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
-  <%= render 'shared/table', objects: @departments %>
+  <%= render 'shared/list', objects: @departments %>
 <% end %>
