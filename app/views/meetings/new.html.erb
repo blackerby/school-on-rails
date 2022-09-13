@@ -25,7 +25,7 @@
                         turbo_frame: '_top' } } %>
         </div>
       </div>
-      <%= f.submit class: 'mt-3 btn btn-primary'%>
+      <%= f.submit class: 'mt-3 btn btn-primary', data: { turbo_frame: '_top' } %>
       <%= link_to 'Cancel', @teacher, class: 'mt-3 btn' %>
     <% end %>
   </div>
