@@ -1,24 +1,20 @@
 <table class="table table-striped mt-3">
   <tr>
     <th>Name</th>
-    <% if signed_in? %>
-      <th>Actions</th>
-    <% end %>
+    <th>Actions</th>
   </tr>
   <% objects.each do |object| %>
     <tr>
       <td>
         <%= link_to object.name, object, data: { turbo_frame: '_top' } %>
       </td>
-      <% if signed_in? %>
-        <td>
-          <%= link_to 'Edit', edit_polymorphic_path(object), data: { turbo_frame: '_top' } %>
-          <%= link_to 'Delete', polymorphic_path(object), 
+      <td>
+        <%= link_to 'Edit', edit_polymorphic_path(object), data: { turbo_frame: '_top' } %>
+        <%= link_to 'Delete', polymorphic_path(object), 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{object.name}?",
                         turbo_frame: '_top' } %>
-        </td>
-      <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
