@@ -46,3 +46,4 @@ end
 gem "importmap-rails", "~> 1.1"
 gem 'simplecov', require: false, group: :test
 gem 'devise'
+gem 'devise_invitable', '~> 2.0.0'
