@@ -1,11 +1,13 @@
 <div class="container text-center">
   <h1><%= @block.name %> Block</h1>
-  <div class="container text-center">
-    <%= link_to 'Edit', edit_block_path(@block) %>
-    <%= link_to 'Delete', @block, 
+  <% if user_signed_in? %>
+    <div class="container text-center">
+      <%= link_to 'Edit', edit_block_path(@block) %>
+      <%= link_to 'Delete', @block, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@block.name}?" } %>
-  </div>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col">
       <h3>Teaching</h3>
