@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_15_143808) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_15_151141) do
   create_table "blocks", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_143808) do
     t.string "invited_by_type"
     t.integer "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
