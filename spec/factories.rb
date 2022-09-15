@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :user do
+    email { 'admin@example.com' }
+    password { 'secret' }
+  end
+
   factory :department do
     name { 'English' }
   end
