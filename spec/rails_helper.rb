@@ -7,6 +7,8 @@ require 'capybara/rails'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'devise'
+require_relative 'support/controller_macros'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -69,4 +71,11 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+end
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.extend ControllerMacros, type: :controller
 end
