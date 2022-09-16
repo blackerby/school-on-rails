@@ -16,6 +16,43 @@ class BlocksController < ApplicationController
     @free_classrooms = @block.free_classrooms
   end
 
+  def new
+    @block = Block.new
+  end
+
+  def create
+    @block = Block.new(block_params)
+    if @block.save
+      redirect_to @block, notice: 'Block successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @block.update(block_params)
+      redirect_to @block, notice: 'Block successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @block.destroy
+    redirect_to blocks_url, status: :see_other, alert: 'Block successfully deleted.'
+  end
+
+  def free_classrooms
+    @block = Block.find(params[:block_id])
+    @target = params[:target]
+    @free_classrooms = @block.free_classrooms
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   private
 
   def block_params

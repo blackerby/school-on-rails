@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
-  root to: 'teachers#index'
+  devise_for :users
+  root to: 'blocks#index'
 
-  resources :departments, only: %i[index show]
+  resources :departments
 
-  resources :blocks, only: %i[index show]
+  resources :blocks do
+    collection do
+      get :free_classrooms
+    end
+  end
 
-  resources :classrooms, only: %i[index show]
+  resources :classrooms
 
-  resources :teachers, only: %i[index show] do
+  resources :teachers do
     resources :meetings
   end
 end
