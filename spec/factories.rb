@@ -5,7 +5,7 @@ FactoryBot.define do
   end
 
   factory :department do
-    name { 'English' }
+    name { 'Admissions' }
   end
 
   factory :teacher do

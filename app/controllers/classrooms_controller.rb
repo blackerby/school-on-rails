@@ -17,7 +17,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(classroom_params)
 
     if @classroom.save
-      redirect_to classrooms_path, notice: 'Classroom successfully created.'
+      redirect_to @classroom, notice: 'Classroom successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

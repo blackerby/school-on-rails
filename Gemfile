@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner-active_record'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do

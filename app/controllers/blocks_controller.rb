@@ -23,7 +23,7 @@ class BlocksController < ApplicationController
   def create
     @block = Block.new(block_params)
     if @block.save
-      redirect_to blocks_path, notice: 'Block successfully created.'
+      redirect_to @block, notice: 'Block successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
