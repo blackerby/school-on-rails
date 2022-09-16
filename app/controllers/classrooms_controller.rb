@@ -9,9 +9,36 @@ class ClassroomsController < ApplicationController
                   end
   end
 
+  def new
+    @classroom = Classroom.new
+  end
+
+  def create
+    @classroom = Classroom.new(classroom_params)
+
+    if @classroom.save
+      redirect_to @classroom, notice: 'Classroom successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @meetings = @classroom.meetings.order(:block_id)
     @free = @classroom.free_blocks
+  end
+
+  def update
+    if @classroom.update(classroom_params)
+      redirect_to @classroom, notice: 'Classroom successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @classroom.destroy
+    redirect_to teachers_url, status: :see_other, alert: 'Classroom successfully deleted.'
   end
 
   private

@@ -13,6 +13,34 @@ class DepartmentsController < ApplicationController
     @teachers = @department.teachers
   end
 
+  def edit; end
+
+  def update
+    if @department.update(department_params)
+      redirect_to @department, notice: 'Department successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def new
+    @department = Department.new
+  end
+
+  def create
+    @department = Department.new(department_params)
+    if @department.save
+      redirect_to @department, notice: 'Department successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @department.destroy
+    redirect_to departments_url, status: :see_other, alert: 'Department successfully deleted.'
+  end
+
   private
 
   def department_params

@@ -1,4 +1,7 @@
 <h1>All Blocks</h1>
+<% if user_signed_in? %>
+  <%= link_to 'Add New Block', new_block_path, class: 'mt-2 btn btn-outline-primary' %>
+<% end %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
   <%= render 'shared/list', objects: @blocks %>

@@ -34,6 +34,9 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'database_cleaner-active_record'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -44,3 +47,5 @@ end
 
 gem "importmap-rails", "~> 1.1"
 gem 'simplecov', require: false, group: :test
+gem 'devise'
+gem 'devise_invitable', '~> 2.0.0'
