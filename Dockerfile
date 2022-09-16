@@ -6,7 +6,7 @@ RUN mkdir -p /var/app
 COPY . /var/app
 WORKDIR /var/app
 
-RUN bundle install --deployment
+RUN bundle install
 
 RUN RAILS_ENV=production rails assets:precompile
 ENV RAILS_SERVE_STATIC_FILES=1
