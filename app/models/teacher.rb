@@ -1,6 +1,6 @@
 class Teacher < ApplicationRecord
   belongs_to :department
-  has_many :meetings
+  has_many :meetings, dependent: :destroy
   has_many :classrooms, through: :meetings
   has_many :blocks, through: :meetings
 
