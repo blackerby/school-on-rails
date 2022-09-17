@@ -1,7 +1,7 @@
 <div class="container text-center">
   <h1><%= @department.name %></h1>
   <% if user_signed_in? %>
-    <div class="container text-center">
+    <div class="container text-center" id="actions">
       <%= link_to 'Edit', edit_department_path(@department) %>
       <%= link_to 'Delete', @department, 
                 data: { turbo_method: :delete, 
