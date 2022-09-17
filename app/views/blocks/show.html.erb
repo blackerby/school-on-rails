@@ -1,24 +1,42 @@
 <div class="container text-center">
   <h1><%= @block.name %> Block</h1>
-  <% if user_signed_in? %>
-    <div class="container text-center">
+  <div class="container text-center">
+    <% if user_signed_in? %>
       <%= link_to 'Edit', edit_block_path(@block) %>
       <%= link_to 'Delete', @block, 
                 data: { turbo_method: :delete, 
                         turbo_confirm: "Are you sure you want to delete #{@block.name}?" } %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
   <div class="row">
     <div class="col">
-      <h3>Teaching</h3>
+      <h3>
+        Teaching
+        <div data-controller="clipboard">
+          <input data-clipboard-target="source" type="hidden" value="<%= @teacher_emails %>" readonly>
+          <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
+        </div>
+      </h3>
       <%= render 'shared/teacher_cards', objects: @meetings %>
     </div>
     <div class="col">
-      <h3>Free</h3>
+      <h3>
+        Free
+        <div data-controller="clipboard">
+          <input data-clipboard-target="source" type="hidden" value="<%= @free_teacher_emails %>" readonly>
+          <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
+        </div>
+      </h3>
       <%= render 'shared/free_cards', objects: @free_teachers %>
     </div>
     <div class="col">
-      <h3>Open Classrooms</h3>
+      <h3>
+        Open Classrooms
+        <div data-controller="clipboard">
+          <input data-clipboard-target="source" type="hidden" value="<%= @free_classroom_names %>" readonly>
+          <button class="btn btn-link" data-action="clipboard#copy">Copy Names to Clipboard</button>
+        </div>
+      </h3>
       <%= render 'shared/free_cards', objects: @free_classrooms %>
     </div>
   </div>
