@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+stegner:
+  first_name: "R.J."
+  last_name: "Stegner"
+  email: "stegner@indiansprings.org"
   department: english
 
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+fleming:
+  first_name: "Mac"
+  last_name: "Fleming"
+  email: "fleming@indiansprings.org"
   department: history

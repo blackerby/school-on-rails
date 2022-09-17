@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+swan:
+  name: "Swan"
 
-two:
-  name: MyString
+contemp:
+  name: "Contemp"
