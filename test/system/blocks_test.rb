@@ -53,4 +53,21 @@ class BlocksTest < ApplicationSystemTestCase
     assert_no_selector 'li', text: /^B$/
     take_failed_screenshot
   end
+
+  test 'copy to clipboard' do
+    skip 'no idea wtf this passes/causes the process to hang'
+    url = block_url(blocks(:a))
+
+    options = Selenium::WebDriver::Options.chrome
+    options.add_preference('profile.content_settings.exceptions.clipboard', {
+                             '*': { 'setting': 1 }
+                           })
+
+    driver = Selenium::WebDriver.for :chrome, capabilities: options
+    driver.navigate.to url
+
+    clip_text = driver.execute_async_script('navigator.clipboard.readText().then(arguments[0])')
+    assert clip_text, 'fleming@indiansprings.org'
+    driver.quit
+  end
 end
