@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  teacher: one
-  block: a_block
-  classroom: one
-  course_title: MyString
+  teacher: stegner
+  block: a
+  classroom: swan
+  course_title: "AP English Language"
 
 two:
-  teacher: two
-  block: b_block
-  classroom: two
-  course_title: MyString
+  teacher: fleming
+  block: b
+  classroom: contemp
+  course_title: "AP US Government"

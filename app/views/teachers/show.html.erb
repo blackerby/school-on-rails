@@ -4,7 +4,7 @@
     <%= mail_to @teacher.email %>
   </div>
   <% if user_signed_in? %>
-    <div class="container text-center">
+    <div class="container text-center" id="actions">
       <%= link_to 'Edit', edit_teacher_path(@teacher) %>
       <%= link_to 'Delete', @teacher, 
                 data: { turbo_method: :delete, 
@@ -18,7 +18,7 @@
   <% end %>
 </div>
 <h4 class="m-3 text-center">
-  <%= link_to_department(@department) %>
+  <%= link_to "#{@department.name}", @department %>
 </h4>
 </div>
 <div class="container text-center">

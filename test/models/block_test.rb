@@ -2,11 +2,11 @@ require 'test_helper'
 
 class BlockTest < ActiveSupport::TestCase
   def setup
-    @block = blocks(:a_block)
-    @a_teacher = teachers(:one)
-    @another_teacher = teachers(:two)
-    @a_classroom = classrooms(:one)
-    @another_classroom = classrooms(:two)
+    @block = blocks(:a)
+    @a_teacher = teachers(:stegner)
+    @another_teacher = teachers(:fleming)
+    @a_classroom = classrooms(:swan)
+    @another_classroom = classrooms(:contemp)
   end
 
   test 'should not save block without name' do
@@ -16,13 +16,13 @@ class BlockTest < ActiveSupport::TestCase
 
   test '#free_teachers' do
     free_teachers = @block.free_teachers
-    assert free_teachers.include?(@another_teacher)
-    assert_not free_teachers.include?(@a_teacher)
+    assert_includes free_teachers, @another_teacher
+    assert_not_includes free_teachers, @a_teacher
   end
 
   test '#free_classrooms' do
     free_classrooms = @block.free_classrooms
-    assert free_classrooms.include?(@another_classroom)
-    assert_not free_classrooms.include?(@a_classroom)
+    assert_includes free_classrooms, @another_classroom
+    assert_not_includes free_classrooms, @a_classroom
   end
 end
