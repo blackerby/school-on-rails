@@ -11,3 +11,8 @@ fleming:
   last_name: "Fleming"
   email: "fleming@indiansprings.org"
   department: history
+
+connerly:
+  first_name: "June"
+  last_name: "Connerly"
+  email: "connerly@indiansprings.org"

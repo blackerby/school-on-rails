@@ -54,21 +54,6 @@ class TeachersTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'All Teachers'
   end
 
-  test 'should add class' do
-    sign_in users(:admin)
-    visit teacher_path(teachers(:fleming))
-
-    click_on 'Add Class'
-
-    fill_in 'Course title', with: 'Vietnam'
-    select 'A', from: 'meeting_block_id'
-    select 'Contemp', from: 'meeting_classroom_id'
-
-    click_on 'Create Meeting'
-
-    assert_text 'Vietnam'
-  end
-
   test 'should search by name' do
     visit teachers_path
 

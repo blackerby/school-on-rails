@@ -38,7 +38,7 @@ class ClassroomsController < ApplicationController
 
   def destroy
     @classroom.destroy
-    redirect_to teachers_url, status: :see_other, alert: 'Classroom successfully deleted.'
+    redirect_to classrooms_url, status: :see_other, alert: 'Classroom successfully deleted.'
   end
 
   private
