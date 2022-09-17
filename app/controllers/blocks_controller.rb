@@ -11,9 +11,12 @@ class BlocksController < ApplicationController
 
   def show
     @meetings = @block.meetings.order(:teacher_id)
+    @teacher_emails = @meetings.map(&:teacher).map(&:email).join(', ')
     @free_teachers = @block.free_teachers
+    @free_teacher_emails = @free_teachers.map(&:email).join(', ')
     @classrooms = @block.classrooms
     @free_classrooms = @block.free_classrooms
+    @free_classroom_names = @free_classrooms.map(&:name).join(', ')
   end
 
   def new
