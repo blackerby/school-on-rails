@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User adds a classroom' do
+RSpec.feature 'User adds a meeting' do
   scenario 'they see the class added to the teacher page', js: true do
     teacher = create(:teacher)
     block = create(:block)
