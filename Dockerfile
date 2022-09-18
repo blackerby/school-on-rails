@@ -8,8 +8,10 @@ WORKDIR /var/app
 
 RUN bundle install
 
-RUN RAILS_ENV=production rails assets:precompile
+ENV RAILS_ENV production
 ENV RAILS_SERVE_STATIC_FILES=1
 ENV RAILS_LOG_TO_STDOUT true
 
-CMD RAILS_ENV=production rails s -b 0.0.0.0
+RUN rails assets:precompile
+
+CMD rails s -b 0.0.0.0
