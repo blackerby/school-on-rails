@@ -51,7 +51,6 @@ class BlocksTest < ApplicationSystemTestCase
 
     assert_selector 'li', text: /^A$/
     assert_no_selector 'li', text: /^B$/
-    take_failed_screenshot
   end
 
   test 'copy to clipboard' do
