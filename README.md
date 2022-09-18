@@ -14,11 +14,11 @@ Make sure you have `bundler` installed (run `gem install bundler` if you don't).
 
 ### Database
 
-This project currently uses the default sqlite setup for development, testing, and production. You can populate the database by running `rails db:seed`.
+This project currently uses the default sqlite setup for development, testing, and production. After setting up the database by running `rails db:migrate`, you can populate the database by running `rails db:seed`.
 
 ### Testing
 
-This project uses the Rails default Minitest framework. Run tests with `bin/rails test test:all`.
+This project uses the Rails default Minitest framework. Run tests with `bin/rails test:all`.
 
 ## Deployment
 
