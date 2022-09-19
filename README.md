@@ -22,9 +22,9 @@ This project uses the Rails default Minitest framework. Run tests with `bin/rail
 
 ## Deployment
 
-This project uses Docker for deployment. To prepare a Docker image of the app, run `docker build -t school .` in the directory that contains the Dockerfile. Test the image locally by running `docker run -it -p 3000:3000 school`. Tag the image by running `docker tag school blackerby/school`, then push it to DockerHub with `docker push blackerby/school`.
+This project uses Docker for deployment.
 
-The published image lives at https://hub.docker.com/repository/docker/blackerby/school. Run `docker pull blackerby/school` to run it on your own Docker setup.
+Locally or on your deployment Docker host, run `docker-compose up` in the app's root directory to launch the production version of the app.
 
 ## Bug Reports and Feature Requests
 
