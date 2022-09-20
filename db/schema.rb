@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_20_154514) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_154846) do
   create_table "blocks", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_154514) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "course_title"
+    t.index ["block_id", "teacher_id"], name: "index_meetings_on_block_id_and_teacher_id", unique: true
     t.index ["block_id"], name: "index_meetings_on_block_id"
     t.index ["classroom_id"], name: "index_meetings_on_classroom_id"
     t.index ["teacher_id"], name: "index_meetings_on_teacher_id"
