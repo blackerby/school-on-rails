@@ -4,6 +4,7 @@ class Classroom < ApplicationRecord
   has_many :meetings, dependent: :destroy
   has_many :teachers, through: :meetings
   has_many :blocks, through: :meetings
+  belongs_to :building
 
   validates :name, presence: true
 
