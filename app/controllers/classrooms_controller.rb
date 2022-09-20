@@ -44,7 +44,7 @@ class ClassroomsController < ApplicationController
   private
 
   def classroom_params
-    params.require(:classroom).permit(:name)
+    params.require(:classroom).permit(:name, :building_id)
   end
 
   def set_classroom
