@@ -9,7 +9,6 @@ WORKDIR /var/app
 RUN bundle install
 
 ENV RAILS_ENV production
-ENV RAILS_SERVE_STATIC_FILES=1
 ENV RAILS_LOG_TO_STDOUT true
 
 RUN rails assets:precompile
