@@ -14,11 +14,12 @@ class ClassroomsTest < ApplicationSystemTestCase
 
     click_on 'Add New Classroom'
 
-    fill_in 'Name', with: 'Studio'
+    fill_in 'Name', with: 'Senior Lounge'
+    select 'Town Hall', from: 'classroom_building_id'
 
     click_on 'Create Classroom'
 
-    assert_selector 'h1', text: 'Classroom Studio'
+    assert_selector 'h1', text: 'Classroom Senior Lounge'
   end
 
   test 'should edit Classroom' do

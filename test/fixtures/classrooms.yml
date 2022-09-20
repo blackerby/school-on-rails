@@ -5,4 +5,5 @@ swan:
   building: one
 
 contemp:
-  name: two
+  name: "Contemp"
+  building: two
