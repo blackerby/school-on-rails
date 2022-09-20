@@ -1,0 +1,18 @@
+<div class="col-lg-12 text-center">
+  <h1><%= @building.name %></h1>
+  <% if user_signed_in? %>
+    <div class="container text-center">
+      <%= link_to 'Edit', edit_building_path(@building) %>
+      <%= link_to 'Delete', @building, 
+                data: { turbo_method: :delete, 
+                        turbo_confirm: "Are you sure you want to delete #{ @building.name }?" } %>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= render 'shared/list', objects: @classrooms %>
+    </div>
+  </div>
+</div>

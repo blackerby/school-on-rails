@@ -1,0 +1,8 @@
+<h1>All Buildings</h1>
+<% if user_signed_in? %>
+  <%= link_to 'Add New Building', new_building_path, class: 'mt-2 btn btn-outline-primary' %>
+<% end %>
+<%= render 'shared/search' %>
+<%= turbo_frame_tag 'results' do %>
+  <%= render 'shared/list', objects: @buildings %>
+<% end %>
