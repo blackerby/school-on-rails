@@ -37,8 +37,9 @@ class BuildingsTest < ApplicationSystemTestCase
   end
 
   test 'should delete Building' do
+    building = buildings(:one)
     sign_in users(:admin)
-    visit building_path(buildings(:one))
+    visit building_path(building)
 
     within '#actions' do
       click_on 'Delete'
@@ -46,6 +47,7 @@ class BuildingsTest < ApplicationSystemTestCase
     end
 
     assert_selector 'h1', text: 'All Buildings'
+    assert_no_selector 'li', text: building.name
   end
 
   test 'should search by name' do
