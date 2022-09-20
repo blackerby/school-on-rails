@@ -1,5 +1,5 @@
 class Building < ApplicationRecord
   include Filterable
 
-  has_many :classrooms
+  has_many :classrooms, dependent: :destroy
 end
