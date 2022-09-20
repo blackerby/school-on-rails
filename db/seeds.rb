@@ -12,6 +12,11 @@ Department.create([{ name: 'English' }, { name: 'History' },
                    { name: 'Fine Arts' }, { name: 'Modern & Classical Languages' },
                    { name: 'Physical Education' }, { name: 'Computer Science' }])
 
+Building.create([
+                  { name: 'A' }, { name: 'B' }, { name: 'C' }, { name: 'Town Hall' },
+                  { name: 'Gym' }, { name: 'Art' }, { name: 'Science Center' }
+                ])
+
 ('A'..'G').each { |letter| Block.create({ name: letter }) }
 Block.create({ name: 'Evening' })
 
