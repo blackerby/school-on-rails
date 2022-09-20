@@ -14,6 +14,11 @@ class BlockTest < ActiveSupport::TestCase
     assert_not block.save, 'Saved the block without a name'
   end
 
+  test 'should not save block without unique name' do
+    block = Block.new(name: 'A')
+    assert_not block.save, 'Saved the block with a duplicate name'
+  end
+
   test '#free_teachers' do
     free_teachers = @block.free_teachers
     assert_includes free_teachers, @another_teacher
