@@ -11,4 +11,8 @@ class Classroom < ApplicationRecord
   def free_blocks
     Block.where.not(id: block_ids)
   end
+
+  def full_name
+    "#{building.name} #{name}"
+  end
 end
