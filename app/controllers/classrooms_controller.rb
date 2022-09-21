@@ -5,7 +5,7 @@ class ClassroomsController < ApplicationController
     @classrooms = if params[:query].present?
                     Classroom.filter_by_name(params[:query])
                   else
-                    Classroom.order('length(name), name')
+                    Classroom.all.sort_by { |classroom| classroom.full_name }
                   end
   end
 
