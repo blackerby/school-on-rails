@@ -5,7 +5,7 @@
       <h6 class="card-subtitle mb-2 text-muted">
         <%= object.course_title %>
       </h6>
-      Classroom: <%= link_to object.classroom.name, object.classroom, data: { turbo_frame: '_top' } %>
+      Classroom: <%= link_to object.classroom.full_name, object.classroom, data: { turbo_frame: '_top' } %>
       <br>
       Block: <%= link_to object.block.name, object.block, data: { turbo_frame: '_top' } %>
     </div>

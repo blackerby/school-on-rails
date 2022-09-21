@@ -3,7 +3,7 @@
     <h5 class="card-title"><%= meeting.course_title %></h5>
     <h6 class="card-subtitle mb-2 text-muted">
       <%= link_to meeting.block.name, meeting.block, data: { turbo_frame: '_top' } %> Block in
-      <%= link_to meeting.classroom.name, meeting.classroom, data: { turbo_frame: '_top' } %>
+      <%= link_to meeting.classroom.full_name, meeting.classroom, data: { turbo_frame: '_top' } %>
     </h6>
     <% if user_signed_in? %>
       <%= link_to 'Edit', edit_teacher_meeting_path(@teacher, meeting), data: { turbo_frame: '_top' } %>
