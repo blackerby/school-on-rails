@@ -4,8 +4,8 @@ class ClassroomsTest < ApplicationSystemTestCase
   test 'viewing the index' do
     visit classrooms_path
     assert_selector 'h1', text: 'All Classrooms'
-    assert_text classrooms(:swan).name
-    assert_text classrooms(:contemp).name
+    assert_selector 'li', text: /Town Hall Swan/
+    assert_selector 'li', text: /Gym Contemp/
   end
 
   test 'should create Classroom' do
@@ -19,7 +19,7 @@ class ClassroomsTest < ApplicationSystemTestCase
 
     click_on 'Create Classroom'
 
-    assert_selector 'h1', text: 'Classroom Senior Lounge'
+    assert_selector 'h1', text: 'Town Hall Senior Lounge'
   end
 
   test 'should edit Classroom' do
@@ -32,7 +32,7 @@ class ClassroomsTest < ApplicationSystemTestCase
 
     click_on 'Update Classroom'
 
-    assert_selector 'h1', text: 'Classroom Studio'
+    assert_selector 'h1', text: 'Town Hall Studio'
   end
 
   test 'should delete Classroom' do
