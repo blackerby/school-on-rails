@@ -1,5 +1,5 @@
 <div class="col-lg-12 text-center">
-  <h1>Classroom <%= @classroom.name %></h1>
+  <h1>Classroom <%= @classroom.full_name %></h1>
   <% if user_signed_in? %>
     <div class="container text-center">
       <%= link_to 'Edit', edit_classroom_path(@classroom) %>

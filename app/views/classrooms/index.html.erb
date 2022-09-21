@@ -4,5 +4,5 @@
 <% end %>
 <%= render 'shared/search' %>
 <%= turbo_frame_tag 'results' do %>
-  <%= render 'shared/list', objects: @classrooms %>
+  <%= render 'list', objects: @classrooms %>
 <% end %>
