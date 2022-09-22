@@ -29,3 +29,5 @@
 /config/master.key
 coverage
 .env
+
+/scripts/iss_fall_2022.csv
