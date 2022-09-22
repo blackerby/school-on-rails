@@ -4,7 +4,7 @@
 
 ### Environment
 
-Who's Free? runs on Ruby 3.0.4 and Rails 7.
+Who's Free? runs on Ruby 3.0.4 and Rails 7. To run the database refresh script, you need Python >= 3.9 and pandas.
 
 [rbenv](https://github.com/rbenv/rbenv) is the recommended environment manager for this project. See that project's readme for installation instructions.
 
