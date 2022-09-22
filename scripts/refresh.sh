@@ -14,8 +14,11 @@ python3 refresh.py
 echo "Copying wrangled data to seeds"
 cp meetings.csv ../lib/seeds/
 
-echo "Resetting database"
-../bin/rails db:reset
+echo "Resetting test database"
+../bin/rails db:reset RAILS_ENV=test
+
+echo "Seeding meetings in development database"
+../bin/rails db:seed:meetings RAILS_ENV=development
 
 echo "Cleaning up generated csvs"
 rm meetings.csv blocks.csv classrooms.csv teachers.csv
