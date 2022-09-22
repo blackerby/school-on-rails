@@ -116,6 +116,10 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -259,6 +263,7 @@ DEPENDENCIES
   devise
   devise_invitable (~> 2.0.0)
   importmap-rails
+  letter_opener
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   sassc-rails
