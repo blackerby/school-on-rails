@@ -16,6 +16,8 @@ Make sure you have `bundler` installed (run `gem install bundler` if you don't).
 
 This project currently uses the default sqlite setup for development, testing, and production. After setting up the database by running `rails db:migrate`, you can populate the database by running `rails db:seed`.
 
+The database needs to be refreshed before the beginning of a new semester. To do so, run `sudo ./scripts/refresh.sh` in the app's root directory. As written, this script only works on the development and test databases.
+
 ### Testing
 
 This project uses the Rails default Minitest framework. Run tests with `bin/rails test:all`.
