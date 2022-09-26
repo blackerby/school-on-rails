@@ -12,30 +12,36 @@
     <div class="col">
       <h3>
         Teaching
-        <div data-controller="clipboard">
-          <input data-clipboard-target="source" type="hidden" value="<%= @teacher_emails %>" readonly>
-          <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
-        </div>
+        <% if request.ssl? %>
+          <div data-controller="clipboard">
+            <input data-clipboard-target="source" type="hidden" value="<%= @teacher_emails %>" readonly>
+            <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
+          </div>
+        <% end %>
       </h3>
       <%= render 'shared/teacher_cards', objects: @meetings %>
     </div>
     <div class="col">
       <h3>
         Free
-        <div data-controller="clipboard">
-          <input data-clipboard-target="source" type="hidden" value="<%= @free_teacher_emails %>" readonly>
-          <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
-        </div>
+        <% if request.ssl? %>
+          <div data-controller="clipboard">
+            <input data-clipboard-target="source" type="hidden" value="<%= @free_teacher_emails %>" readonly>
+            <button class="btn btn-link" data-action="clipboard#copy">Copy Emails to Clipboard</button>
+          </div>
+        <% end %>
       </h3>
       <%= render 'shared/free_cards', objects: @free_teachers %>
     </div>
     <div class="col">
       <h3>
         Open Classrooms
-        <div data-controller="clipboard">
-          <input data-clipboard-target="source" type="hidden" value="<%= @free_classroom_names %>" readonly>
-          <button class="btn btn-link" data-action="clipboard#copy">Copy Names to Clipboard</button>
-        </div>
+        <% if request.ssl? %>
+          <div data-controller="clipboard">
+            <input data-clipboard-target="source" type="hidden" value="<%= @free_classroom_names %>" readonly>
+            <button class="btn btn-link" data-action="clipboard#copy">Copy Names to Clipboard</button>
+          </div>
+        <% end %>
       </h3>
       <%= render 'free_cards', objects: @free_classrooms %>
     </div>
